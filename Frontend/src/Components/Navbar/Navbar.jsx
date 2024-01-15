@@ -3,6 +3,7 @@ import "./navbar.css"
 import shoppingLogo from "../Assets/shopping logo.svg"
 import cart from "../Assets/cart_icon.png";
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -15,14 +16,14 @@ const Navbar = () => {
                 <p>Shopping</p>
             </div>
             <ul className="nav-menu">
-                <li onClick={() => { setPage('Shop') }}>Shop {page === "Shop" ? <hr /> : ""}</li>
-                <li onClick={() => { setPage('Men') }}>Men {page === "Men" ? <hr /> : ""}</li>
-                <li onClick={() => { setPage('Women') }}>Women {page === "Women" ? <hr /> : ""}</li>
-                <li onClick={() => { setPage('Kid') }}>Kids {page === "Kid" ? <hr /> : ""}</li>
+                <li onClick={() => { setPage('Shop') }}><Link style={{ textDecoration: "none" }} to="/">Shop </Link> {page === "Shop" ? <hr /> : ""}</li>
+                <li onClick={() => { setPage('Men') }}> <Link style={{ textDecoration: "none" }} to="/mens">Men</Link> {page === "Men" ? <hr /> : ""}</li>
+                <li onClick={() => { setPage('Women') }}><Link style={{ textDecoration: "none" }} to="womens">Women</Link> {page === "Women" ? <hr /> : ""}</li>
+                <li onClick={() => { setPage('Kid') }}><Link style={{ textDecoration: "none" }} to="kids">Kids</Link> {page === "Kid" ? <hr /> : ""}</li>
             </ul>
             <div className="nav-login-cart">
-                <button>login</button>
-                <img src={cart} alt='cart' />
+                <Link to="/login"><button>login</button></Link>
+                <Link to="/cart"><img src={cart} alt='cart' /></Link>
                 <div className='count'>0</div>
             </div>
         </div>

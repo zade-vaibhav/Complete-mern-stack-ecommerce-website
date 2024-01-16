@@ -6,6 +6,7 @@
     margin: auto;
     padding: 0px 150px;
     background: linear-gradient(180deg,rgb(236, 85, 85),white);
+    border-radius: 20px;
 }
 
 .offer_left{
